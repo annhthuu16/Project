@@ -111,18 +111,3 @@ SELECT CUSTOMERNAME , rfm_recency, rfm_frequency, rfm_monetary,
 from rfm
 
 
---------What products are most often sold together?
-----(Made the order the same time but ordered 9 different products)
---select * from sales where ORDERNUMBER =  10411;
-
-
---SELECT string_agg(',' ,productcode) AS productcode_list
---	FROM sales
---	WHERE ordernumber IN 
---		(SELECT ordernumber 
---		FROM 
---			(SELECT ordernumber, COUNT(*) row_number
---			FROM sales
---			WHERE status ='Shipped'
---			GROUP BY ordernumber) quantity
---		WHERE row_number =2)
